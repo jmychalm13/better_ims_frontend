@@ -18,7 +18,7 @@ nav {
   min-height: 500px;
   margin: 80px auto;
   padding: 40px 30px 30px 30px;
-  background-color: #A9D2D5;
+  background-image: url(assets/nnnoise.svg);
   border-radius: 15px;
   box-shadow: 13px 13px 20px #8dbbbe, -13px -13px 20px #8dbbbe;
 }
@@ -58,6 +58,14 @@ nav {
   padding: 10px 15px 10px 10px;
   /* border: 1px solid red; */
 }
+
+/* .wrapper .form-field input:active {
+  border: none;
+}
+
+.wrapper .form-field:active {
+  border: none;
+} */
 
 .wrapper .form-field {
   padding-left: 10px;
