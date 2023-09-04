@@ -31,21 +31,23 @@ export function Login() {
 
   console.log(jwt);
   return (
-    <div id="login">
-      <h1>Login</h1>
+    <div id="login" className="wrapper">
+      <div className="text-center mt-4 name">Better IMS</div>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form onSubmit={handleSubmit} className="p-3 mt-3">
+        <div className="form-field d-flex align-items-center">
+          <span className="far fa-user"></span>
           Email: <input className="form-control" name="email" type="email" />
         </div>
-        <div className="form-group">
+        <div className="form-field d-flex align-items-center">
+          <span className="fas fa-key"></span>
           Password: <input className="form-control" name="password" type="password" />
         </div>
-        <button type="submit" className="btn btn-primary mt-3">
+        <button type="submit" className="btn mt-3">
           Login
         </button>
       </form>
