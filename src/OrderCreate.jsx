@@ -11,10 +11,14 @@ export function OrderCreate() {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   useEffect(displayProducts, []);
   return (
     <div className="order-form">
-      <form className="mt-5 pt-2 m-auto rounded">
+      <form onSubmit={handleSubmit} className="form-order mt-5 p-2 m-auto rounded">
         <h1 className="text-center">Create Order</h1>
         <div className="header-row row">
           <div className="text-center col border-bottom text-center product-name">
@@ -26,26 +30,30 @@ export function OrderCreate() {
           <div className="col text-center text-center on-hand border-bottom">
             <strong>ON-HAND</strong>
           </div>
-          <div className="col text-center text-center amount-ordered border-bottom">
+          <div className="col text-center text-center amount-ordered">
             <strong>Quantity</strong>
           </div>
         </div>
         {products.map((product) => (
           <div key={product.id} className="row">
-            <div className="product-name col border-bottom-0 text-center">
+            <div className="border product-name col text-center">
               <p>{product.product_name}</p>
             </div>
-            <div className="col text-center text-center uom">{product.uom}</div>
-            <div className="col text-center on-hand">{product.on_hand}</div>
+            <div className="border col text-center text-center uom">{product.uom}</div>
+            <div className="border col text-center on-hand">{product.on_hand}</div>
             <div className="col text-center">
               <input type="number" className="form-control" placeholder="Quantity" />
             </div>
           </div>
         ))}
-        {/*  */}
-        <div className="row">
-          <p>You have placed an order for 76 cases.</p>
+        <div className="d-flex justify-content-end">
+          <button type="submit" className="btn border">
+            Place Order
+          </button>
         </div>
+        {/* <div className="row">
+          <p>You have placed an order for 76 cases.</p>
+        </div> */}
       </form>
     </div>
   );

@@ -37,7 +37,7 @@ export function Login() {
           <h2 className="text-center text-dark mt-5">Better IMS</h2>
           <div className="text-center mb-5 text-dark">A better way to manage your inventory</div>
           <div className="card my-5">
-            <form onSubmit={handleSubmit} className="card-body cardbody-color p-lg-5">
+            <form onSubmit={handleSubmit} className="submit-form card-body cardbody-color p-lg-5">
               <ul>
                 {errors.map((error) => (
                   <li key={error}>{error}</li>
@@ -58,7 +58,7 @@ export function Login() {
                 <input className="form-control" name="password" type="password" placeholder="password" />
               </div>
               <div className="text-center">
-                <button type="submit" className="btn btn-color mt-3">
+                <button type="submit" className="btn mt-3">
                   Login
                 </button>
               </div>
