@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             <i className="bi bi-clipboard"></i>
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,9 +32,9 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/order_create">
                   Create Order
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
