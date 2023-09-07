@@ -5,6 +5,8 @@ import { useEffect } from "react";
 export function OrderCreate() {
   const [products, setProducts] = useState([]);
 
+  const [productsToOrder, setProductsToOrder] = useState({});
+
   const displayProducts = () => {
     axios.get("http://localhost:3000/products.json").then((response) => {
       setProducts(response.data);
@@ -13,6 +15,16 @@ export function OrderCreate() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const params = new FormData(event.target);
+    axios.post("http://localhost:3000/orders.json", { order: productsToOrder }).then((response) => {
+      console.log(response);
+    });
+  };
+
+  const updateProductsToOrder = (id, quantity) => {
+    var testVar = productsToOrder;
+    testVar[id] = quantity;
+    setProductsToOrder(testVar);
   };
 
   useEffect(displayProducts, []);
@@ -42,7 +54,13 @@ export function OrderCreate() {
             <div className="border col text-center text-center uom">{product.uom}</div>
             <div className="border col text-center on-hand">{product.on_hand}</div>
             <div className="col text-center">
-              <input type="number" className="form-control" placeholder="Quantity" />
+              <input
+                name={"quantity" + product.id}
+                type="number"
+                className="form-control"
+                placeholder="Quantity"
+                onChange={(event) => updateProductsToOrder(product.id, event.target.value)}
+              />
             </div>
           </div>
         ))}
