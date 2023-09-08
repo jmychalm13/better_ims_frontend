@@ -15,7 +15,6 @@ export function OrderConfirm() {
         products.forEach((product) => {
           response.data.product_orders.forEach((product_order) => {
             if (product.id === product_order.product_id) {
-              console.log(product.product_name, product_order.quantity_shipped);
               info.push({
                 product_name: product.product_name,
                 quantity: product_order.quantity_shipped,
@@ -35,22 +34,20 @@ export function OrderConfirm() {
 
   return (
     <div>
-      <h1>Order Confirmed</h1>
-      <div className="table-responsive">
-        <table className="table table-striped table-borderless border-0 border-b-2 brc-default-l1">
-          <thead className="bg-none bgc-default-tp1">
+      <h1 className="text-center m-3">Order Confirmed</h1>
+      <div className="table-responsive d-flex justify-content-center">
+        <table className="table border border-black table-striped">
+          <thead className="bg-none">
             <tr className="text-white">
-              <th className="opacity-2">#</th>
-              <th>Description</th>
+              <th>#</th>
+              <th>Product Name</th>
               <th>Qty</th>
-              <th>Unit Price</th>
-              <th width="140">Amount</th>
             </tr>
           </thead>
           <tbody className="text-95 text-secondary-d3">
-            <tr></tr>
             {currentProducts.map((product) => (
               <tr key={product.product_name}>
+                <td>1</td>
                 <td>{product.product_name}</td>
                 <td>{product.quantity}</td>
               </tr>
@@ -58,12 +55,6 @@ export function OrderConfirm() {
           </tbody>
         </table>
       </div>
-      {/* {currentProducts.map((product) => (
-        <div key={product.product_name}>
-          <p>{product.product_name}</p>
-          <p>{product.quantity}</p>
-        </div>
-      ))} */}
     </div>
   );
 }
