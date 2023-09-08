@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 export function OrderConfirm() {
   const [currentOrder, setCurrentOrder] = useState([]);
   const [currentProducts, setCurrentProducts] = useState([]);
+  const params = useParams();
 
   const getCurrentOrder = () => {
     axios
-      .get("http://localhost:3000/orders/11.json")
+      .get(`http://localhost:3000/orders/${params.id}.json`)
       .then((response) => {
         var products = response.data.products;
         var info = [];

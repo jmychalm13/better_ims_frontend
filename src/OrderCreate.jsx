@@ -17,7 +17,7 @@ export function OrderCreate() {
     event.preventDefault();
     // const params = new FormData(event.target);
     axios.post("http://localhost:3000/orders.json", { order: productsToOrder }).then((response) => {
-      console.log(response);
+      window.location.href = "/order_confirm/" + response.data.id;
     });
   };
 

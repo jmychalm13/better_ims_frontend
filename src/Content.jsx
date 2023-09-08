@@ -7,11 +7,11 @@ import { Routes, Route } from "react-router-dom";
 export function Content() {
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/order_create" element={<OrderCreate />} />
         <Route path="/" element={<Login />} />
-      </Routes> */}
-      <OrderConfirm />
+        <Route path="/order_confirm/:id" element={<OrderConfirm />} />
+      </Routes>
       {/* <DailyUsage /> */}
     </div>
   );
