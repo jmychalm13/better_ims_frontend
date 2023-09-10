@@ -60,6 +60,8 @@ export function OrderCreate() {
                 className="form-control"
                 placeholder="Quantity"
                 onChange={(event) => updateProductsToOrder(product.id, event.target.value)}
+                max={50}
+                min={0}
               />
             </div>
           </div>

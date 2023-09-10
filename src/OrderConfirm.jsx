@@ -85,6 +85,8 @@ export function OrderConfirm() {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="d-flex justify-content-center">
         {received ? (
           <button className="btn" type="submit">
             Receive Order
