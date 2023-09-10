@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function Orders() {
   const [orders, setOrders] = useState([]);
@@ -34,7 +35,7 @@ export function Orders() {
                   <td>{order.friendly_date_placed}</td>
                   <td>{!order.friendly_date_received ? "Not Received" : order.friendly_date_received}</td>
                   <td>
-                    <a href="#">edit</a>
+                    <Link to={`/order_confirm/${order.id}/edit`}>edit</Link>
                   </td>
                 </tr>
               );

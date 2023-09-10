@@ -5,14 +5,10 @@ import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export function OrderConfirm() {
-  const [currentOrder, setCurrentOrder] = useState([]);
   const [currentProducts, setCurrentProducts] = useState([]);
   const params = useParams();
   const location = useLocation();
   const [received, updateReceived] = useState(false);
-  const inlineStyles = {
-    borderRadius: "30px",
-  };
 
   const getCurrentOrder = () => {
     console.log(location);
@@ -22,7 +18,6 @@ export function OrderConfirm() {
         var products = response.data.products;
         var info = [];
         if (location.pathname.includes("edit")) {
-          console.log("I ran");
           updateReceived(true);
         }
         products.forEach((product) => {
@@ -31,26 +26,36 @@ export function OrderConfirm() {
               info.push({
                 product_name: product.product_name,
                 quantity: product_order.quantity_shipped,
+                id: product_order.id,
+                received: product_order.received,
               });
             }
           });
         });
         setCurrentProducts(info);
         // console.log(currentOrder);
-        setCurrentOrder(response.data);
       })
       .catch(() => {
         console.log("Error");
       });
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    axios.patch(`http://localhost:3000/orders/${params.id}.json`, data).then((response) => {
+      console.log(response);
+    });
+  };
+
   useEffect(getCurrentOrder, []);
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <h1 className="text-center m-3">Order Confirmed</h1>
       <div className="table-responsive d-flex justify-content-center">
         <table className="table border border-black table-striped">
-          <thead style={inlineStyles} className="bg-none">
+          <thead className="bg-none">
             <tr className="text-white">
               <th>#</th>
               <th>Product Name</th>
@@ -64,12 +69,30 @@ export function OrderConfirm() {
                 <td>{index + 1}</td>
                 <td>{product.product_name}</td>
                 <td>{product.quantity}</td>
-                {received ? <td>8</td> : <></>}
+                {received ? (
+                  <td>
+                    <input
+                      type="number"
+                      name={product.id}
+                      placeholder={product.quantity}
+                      defaultValue={product.quantity}
+                    />
+                  </td>
+                ) : (
+                  <></>
+                )}
               </tr>
             ))}
           </tbody>
         </table>
+        {received ? (
+          <button className="btn" type="submit">
+            Receive Order
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
-    </div>
+    </form>
   );
 }
