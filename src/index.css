@@ -18,8 +18,7 @@ nav {
 /* login container styling */
 .btn-color{
   background-color: #97bec0;
-  color: #fff;
-  
+  color: #fff;  
 }
 
 .profile-image-pic{
@@ -27,8 +26,6 @@ nav {
   width: 200px;
   object-fit: cover;
 }
-
-
 
 .cardbody-color{
   background-color: #ebf2fa;

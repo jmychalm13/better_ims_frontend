@@ -67,6 +67,11 @@ export function OrderCreate() {
             </tbody>
           </table>
         </div>
+        <div className="d-flex justify-content-end">
+          <button type="submit" className="btn border">
+            Place Order
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -24,7 +24,7 @@ export function Orders() {
         >
           <thead className="bg-none">
             <tr className="text-white">
-              <th>#</th>
+              <th>Order #</th>
               <th>Date Placed</th>
               <th>Date Received</th>
               <th></th>
@@ -38,7 +38,9 @@ export function Orders() {
                   <td>{order.friendly_date_placed}</td>
                   <td>{!order.friendly_date_received ? "Not Received" : order.friendly_date_received}</td>
                   <td>
-                    <Link to={`/order_confirm/${order.id}/edit`}>edit</Link>
+                    <button className="btn">
+                      <Link to={`/order_confirm/${order.id}/edit`}>edit</Link>
+                    </button>
                   </td>
                 </tr>
               );
