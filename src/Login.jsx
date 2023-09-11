@@ -47,7 +47,7 @@ export function Login() {
                 <img
                   src="src/assets/logo-transparent-png.png"
                   alt=""
-                  className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  className="img-fluid profile-image-pic img-thumbnail rounded-circle mb-5"
                   width="200px"
                 />
               </div>

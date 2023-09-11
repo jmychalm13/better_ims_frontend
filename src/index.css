@@ -15,6 +15,18 @@ nav {
   background-color: #97bec0;
 }
 
+.img-thumbnail {
+  background: transparent;
+  border: none;
+}
+
+.card {
+  border-radius: 5px;
+  overflow: hidden;
+  border: none;
+  box-shadow: rgba(151, 190, 192, 0.8) 0px 7px 29px 0px;
+}
+
 /* login container styling */
 .btn-color{
   background-color: #97bec0;
