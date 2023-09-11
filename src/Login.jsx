@@ -21,7 +21,7 @@ export function Login() {
         axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.jwt}`;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
-        window.location.href = "/"; // change this to hide a modal or go to a specific page
+        window.location.href = "/orders"; // change this to hide a modal or go to a specific page
       })
       .catch((error) => {
         console.log("Log here", error.response);

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function OrderConfirm() {
   const [currentProducts, setCurrentProducts] = useState([]);
@@ -27,7 +28,7 @@ export function OrderConfirm() {
                 product_name: product.product_name,
                 quantity: product_order.quantity_shipped,
                 id: product_order.id,
-                received: product_order.received,
+                received: product_order.quantity_received || product_order.quantity_shipped,
               });
             }
           });
@@ -54,12 +55,12 @@ export function OrderConfirm() {
     <form onSubmit={handleSubmit}>
       <h1 className="text-center m-3">Order Confirmed</h1>
       <div className="table-responsive d-flex justify-content-center">
-        <table className="table border border-black table-striped">
+        <table style={{ borderRadius: "5px", overflow: "hidden" }} className="table border border-black table-striped">
           <thead className="bg-none">
             <tr className="text-white">
               <th>#</th>
               <th>Product Name</th>
-              <th>Qty</th>
+              <th>Qty Shipped</th>
               {received ? <th>Received</th> : <></>}
             </tr>
           </thead>
@@ -74,8 +75,8 @@ export function OrderConfirm() {
                     <input
                       type="number"
                       name={product.id}
-                      placeholder={product.quantity}
-                      defaultValue={product.quantity}
+                      placeholder={product.received}
+                      defaultValue={product.received}
                     />
                   </td>
                 ) : (
@@ -88,9 +89,9 @@ export function OrderConfirm() {
       </div>
       <div className="d-flex justify-content-center">
         {received ? (
-          <button className="btn" type="submit">
+          <Link to="/orders" className="btn" type="submit">
             Receive Order
-          </button>
+          </Link>
         ) : (
           <></>
         )}

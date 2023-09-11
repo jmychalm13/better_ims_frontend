@@ -18,7 +18,10 @@ export function Orders() {
     <div>
       <h1 className="text-center pt-2">View Orders</h1>
       <div className="table-responsive d-flex justify-content-center">
-        <table className="table border border-black table-striped">
+        <table
+          style={{ borderRadius: "5px", overflow: "hidden" }}
+          className="rounded table border border-black table-striped"
+        >
           <thead className="bg-none">
             <tr className="text-white">
               <th>#</th>
