@@ -95,3 +95,14 @@ a{
   box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 8px 0px;
   border-radius: 13px !important;
 }
+
+.table-responsive table th {
+  font-size: 1.4rem;
+}
+
+/* do i want the numbers in the center of the cols???? */
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+  font-size: 1.25rem;
+}
