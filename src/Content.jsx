@@ -5,6 +5,7 @@ import { UsageConfirm } from "./UsageConfirm";
 import { OrderCreate } from "./OrderCreate";
 import { Orders } from "./Orders";
 import { Routes, Route } from "react-router-dom";
+import { PieChart } from "./PieChart";
 
 export function Content() {
   return (
@@ -17,8 +18,10 @@ export function Content() {
         <Route path="/order_confirm/:id/edit" element={<OrderConfirm />} />
         <Route path="/daily_usage" element={<DailyUsage />} />
         <Route path="/usage_confirm" element={<UsageConfirm />} />
+        <Route path="/daily_usage_chart" element={<PieChart />} />
       </Routes>
       {/* <DailyUsage /> */}
+      {/* <PieChart /> */}
     </div>
   );
 }

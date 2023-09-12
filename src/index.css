@@ -51,9 +51,9 @@ a{
   border: none;
 }
 
-.login-container {
+/* .login-container {
   max-height: 75vh;
-}
+} */
 
 .order-form {
 }
@@ -139,4 +139,8 @@ a{
 
 .usage-confirm-container {
   min-height: 70vh;
+}
+
+.chart-container {
+  width: 75vw;
 }

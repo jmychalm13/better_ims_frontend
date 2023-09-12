@@ -36,6 +36,11 @@ export function Header() {
                   View Orders
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/daily_usage_chart" className="nav-link">
+                  View Chart
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
