@@ -51,6 +51,10 @@ a{
   border: none;
 }
 
+.login-container {
+  max-height: 75vh;
+}
+
 .order-form {
 }
 
@@ -114,4 +118,23 @@ a{
 .table > tbody > tr > td {
   vertical-align: middle;
   font-size: 1.25rem;
+}
+
+/* .page-container {
+  position: relative;
+  min-height: 100%;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;          
+} */
+
+.confirm-form {
+  min-height: 70vh;
 }

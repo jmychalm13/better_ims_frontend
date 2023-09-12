@@ -52,7 +52,7 @@ export function OrderConfirm() {
   useEffect(getCurrentOrder, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="confirm-form" onSubmit={handleSubmit}>
       <h1 className="text-center m-3">Order Confirmed</h1>
       <div className="table-responsive d-flex justify-content-center">
         <table style={{ borderRadius: "5px", overflow: "hidden" }} className="table border border-black table-striped">

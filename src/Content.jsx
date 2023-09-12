@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   return (
-    <div>
+    <div className="content-wrap">
       <Routes>
         <Route path="/order_create" element={<OrderCreate />} />
         <Route path="/" element={<Login />} />

@@ -31,7 +31,7 @@ export function Login() {
 
   console.log(jwt);
   return (
-    <div className="container">
+    <div className="container login-container">
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">Better IMS</h2>
