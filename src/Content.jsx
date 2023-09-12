@@ -14,6 +14,7 @@ export function Content() {
         <Route path="/order_confirm/:id" element={<OrderConfirm />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/order_confirm/:id/edit" element={<OrderConfirm />} />
+        <Route path="/daily_usage" element={<DailyUsage />} />
       </Routes>
       {/* <DailyUsage /> */}
     </div>

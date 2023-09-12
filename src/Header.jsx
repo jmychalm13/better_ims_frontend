@@ -27,9 +27,9 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#">
-                  View Products
-                </a>
+                <Link className="nav-link" aria-current="page" to="/daily_usage">
+                  Daily Usage
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/orders">
