@@ -16,8 +16,8 @@ export function DailyUsage() {
     event.preventDefault();
     // axios patch request
     axios.post("http://localhost:3000/daily_usages.json", { products: productsToDeduct }).then((response) => {
-      // window.location.href = "/order_confirm/" + response.data.id;
       console.log(response);
+      window.location.href = "/usage_confirm";
     });
     // productsToDecuct is data
   };

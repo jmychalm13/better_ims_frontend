@@ -1,13 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export function UsageConfirm() {
   const [currentProducts, getCurrentProducts] = useState([]);
-  const params = useParams();
 
   let products = [];
   const getCurrentUsage = () => {
@@ -23,7 +19,7 @@ export function UsageConfirm() {
   useEffect(getCurrentUsage, []);
 
   return (
-    <form action="">
+    <form className="confirm-form">
       <h1 className="text-center m-3">Usage Confirmed</h1>
       <div className="table-responsive d-flex justify-content-center">
         <table style={{ borderRadius: "5px", overflow: "hidden" }} className="table border border-black table-striped">
@@ -48,7 +44,3 @@ export function UsageConfirm() {
     </form>
   );
 }
-
-// {currentProducts.map((product) => (
-//   <p key={product.id}>{product.product_name}</p>
-// ))}
