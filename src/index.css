@@ -130,11 +130,13 @@ a{
 }
 
 #footer {
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;          
+            
 } */
 
 .confirm-form {
+  min-height: 70vh;
+}
+
+.usage-confirm-container {
   min-height: 70vh;
 }
