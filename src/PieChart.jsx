@@ -5,18 +5,6 @@ import axios from "axios";
 import { CategoryScale } from "chart.js";
 import { useState } from "react";
 import { useEffect } from "react";
-// const labels = ["January", "February", "March", "April", "May", "June"];
-// const data = {
-//   labels: labels,
-//   datasets: [
-//     {
-//       label: "My First dataset",
-//       backgroundColor: "rgb(255, 99, 132)",
-//       borderColor: "rgb(0,0,255)",
-//       data: [0, 10, 5, 2, 20, 30, 45],
-//     },
-//   ],
-// };
 
 Chart.register(CategoryScale);
 export function PieChart() {
