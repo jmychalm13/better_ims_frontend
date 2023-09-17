@@ -15,6 +15,7 @@ export function PieChart() {
       setCurrentData(response.data);
       let labelArray = [];
       let dataArray = [];
+      console.log(currentData);
       response.data.forEach((data) => {
         labelArray.push(data.product.product_name);
         dataArray.push(data.quantity_used);
