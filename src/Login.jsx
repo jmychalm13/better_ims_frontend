@@ -45,7 +45,7 @@ export function Login() {
               </ul>
               <div className="text-center">
                 <img
-                  src="src/assets/logo-transparent-png.png"
+                  src="public/assets/logo-transparent-png.png"
                   alt=""
                   className="img-fluid profile-image-pic img-thumbnail rounded-circle mb-5"
                   width="200px"
