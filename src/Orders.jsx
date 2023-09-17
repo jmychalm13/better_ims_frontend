@@ -7,7 +7,7 @@ export function Orders() {
   const [orders, setOrders] = useState([]);
 
   const displayOrders = () => {
-    axios.get("http://localhost:3000/orders.json").then((response) => {
+    axios.get("/orders.json").then((response) => {
       setOrders(response.data);
     });
   };

@@ -7,7 +7,7 @@ export function UsageConfirm() {
 
   let products = [];
   const getCurrentUsage = () => {
-    axios.get(`http://localhost:3000/daily_usages.json`).then((response) => {
+    axios.get(`/daily_usages.json`).then((response) => {
       let items = response.data;
       items.forEach((product) => {
         products.push(product);

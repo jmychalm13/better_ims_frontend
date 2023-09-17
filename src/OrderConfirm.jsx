@@ -14,7 +14,7 @@ export function OrderConfirm() {
   const getCurrentOrder = () => {
     console.log(location);
     axios
-      .get(`http://localhost:3000/orders/${params.id}.json`)
+      .get(`/orders/${params.id}.json`)
       .then((response) => {
         var products = response.data.products;
         var info = [];
@@ -44,7 +44,7 @@ export function OrderConfirm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    axios.patch(`http://localhost:3000/orders/${params.id}.json`, data).then((response) => {
+    axios.patch(`/orders/${params.id}.json`, data).then((response) => {
       console.log(response);
     });
   };

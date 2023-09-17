@@ -7,7 +7,7 @@ export function DailyUsage() {
   const [productsToDeduct, updateProductsToDeduct] = useState({});
 
   const displayProducts = () => {
-    axios.get("http://localhost:3000/products.json").then((response) => {
+    axios.get("/products.json").then((response) => {
       setProducts(response.data);
     });
   };
@@ -15,7 +15,7 @@ export function DailyUsage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // axios patch request
-    axios.post("http://localhost:3000/daily_usages.json", { products: productsToDeduct }).then((response) => {
+    axios.post("/daily_usages.json", { products: productsToDeduct }).then((response) => {
       console.log(response);
       window.location.href = "/usage_confirm";
     });

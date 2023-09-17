@@ -8,7 +8,7 @@ export function OrderCreate() {
   const [productsToOrder, setProductsToOrder] = useState({});
 
   const displayProducts = () => {
-    axios.get("http://localhost:3000/products.json").then((response) => {
+    axios.get("/products.json").then((response) => {
       setProducts(response.data);
     });
   };
@@ -16,7 +16,7 @@ export function OrderCreate() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // const params = new FormData(event.target);
-    axios.post("http://localhost:3000/orders.json", { order: productsToOrder }).then((response) => {
+    axios.post("/orders.json", { order: productsToOrder }).then((response) => {
       window.location.href = "/order_confirm/" + response.data.id;
     });
   };
