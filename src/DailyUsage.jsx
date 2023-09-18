@@ -41,7 +41,7 @@ export function DailyUsage() {
           <div className="table-responsive d-flex justify-content-center">
             <table
               style={{ borderRadius: "5px", overflow: "hidden" }}
-              className="table border border-black table-striped"
+              className="rounded table border border-black table-striped"
             >
               <thead className="bg-none">
                 <tr className="text-white">

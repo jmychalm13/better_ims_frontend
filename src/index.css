@@ -98,7 +98,6 @@ a{
 }
 
 .table-responsive table {
-  width: 75%;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 8px 0px;
   border-radius: 13px !important;
 }
@@ -114,19 +113,6 @@ a{
   font-size: 1.25rem;
 }
 
-/* .page-container {
-  position: relative;
-  min-height: 100%;
-}
-
-.content-wrap {
-  padding-bottom: 2.5rem;    
-}
-
-#footer {
-            
-} */
-
 .confirm-form {
   min-height: 70vh;
 }
@@ -137,4 +123,15 @@ a{
 
 .chart-container {
   width: 75vw;
+}
+
+/* Table Media Queries */
+@media screen and (max-width: 480px) {
+  .table-responsive table th {
+    font-size: 1rem;
+  }
+
+  .table > tbody > tr > td {
+    font-size: 0.75rem;
+  }
 }
