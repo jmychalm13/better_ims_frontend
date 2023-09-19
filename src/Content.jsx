@@ -6,6 +6,7 @@ import { OrderCreate } from "./OrderCreate";
 import { Orders } from "./Orders";
 import { Routes, Route } from "react-router-dom";
 import { PieChart } from "./PieChart";
+import { Inventory } from "./Inventory";
 
 export function Content() {
   return (
@@ -19,6 +20,7 @@ export function Content() {
         <Route path="/daily_usage" element={<DailyUsage />} />
         <Route path="/usage_confirm" element={<UsageConfirm />} />
         <Route path="/daily_usage_chart" element={<PieChart />} />
+        <Route path="/inventory" element={<Inventory />} />
       </Routes>
       {/* <DailyUsage /> */}
       {/* <PieChart /> */}

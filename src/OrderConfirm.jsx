@@ -43,9 +43,10 @@ export function OrderConfirm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("I ran");
     const data = new FormData(event.target);
     axios.patch(`/orders/${params.id}.json`, data).then((response) => {
-      console.log(response);
+      window.location.href = "/orders";
     });
   };
 
@@ -89,9 +90,9 @@ export function OrderConfirm() {
       </div>
       <div className="d-flex justify-content-center">
         {received ? (
-          <Link to="/orders" className="btn" type="submit">
+          <button className="btn" type="submit">
             Receive Order
-          </Link>
+          </button>
         ) : (
           <></>
         )}
