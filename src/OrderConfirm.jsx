@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export function OrderConfirm() {
   const [currentProducts, setCurrentProducts] = useState([]);
@@ -47,6 +46,7 @@ export function OrderConfirm() {
     const data = new FormData(event.target);
     axios.patch(`/orders/${params.id}.json`, data).then((response) => {
       window.location.href = "/orders";
+      console.log(response);
     });
   };
 

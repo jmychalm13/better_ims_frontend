@@ -32,6 +32,13 @@ export function Login() {
   console.log(jwt);
   return (
     <div className="container login-container">
+      <div className="alert alert-info mt-3 alert-dismissible fade show" role="alert">
+        <p>
+          Signin info is: <strong>Email:</strong> jane@test.com | <strong>Password:</strong> password | Please allow 2 -
+          3 minutes for backend to spinup after signing in.
+        </p>
+        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">Better IMS</h2>
